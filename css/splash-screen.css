@@ -1,0 +1,330 @@
+/* |--------------------------------| */
+
+/* | CSS File for the splash-screen | */
+
+/* |--------------------------------| */
+
+/* Reset Styles */
+
+html {
+	animation: fade-in 1.5s ease-in-out;
+}
+/* Header, Centering, Titles */
+
+header {
+	display: inline-block;
+	padding-top: calc(50vh - 250px);
+	position: fixed;
+	left: 0;
+	background: var(--blue-grey);
+	height: 100vh;
+	width: 100vw;
+	z-index: 1;
+	overflow: hidden;
+}
+header .title {
+	font-family: "Squada One", sans-serif;
+	font-size: 200px;
+	color: cornflowerblue;
+	animation: color-change-text 7.5s ease-in-out infinite;
+}
+
+/* Name Input */
+
+.enter-name {
+	visibility: hidden;
+	position: relative;
+}
+.check {
+	position: relative;
+}
+.check::after {
+	content: attr(data-tooltip);
+	opacity: 0;
+	position: absolute;
+	width: 50px;
+	padding: 5px;
+	left: 50px;
+	border-radius: 5px;
+	font-size: 15px;
+	text-align: center;
+	bottom: -5px;
+	background: white;
+	color: var(--blue-grey);
+	visibility: hidden;
+	transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+.check:hover::after {
+	visibility: visible;
+	opacity: 1;
+}
+.check i {
+	font-size: 20px;
+	color: green;
+	padding: 5px;
+	transition: background 0.25s ease-in-out, color 0.75s ease-in-out, transform 0.75s ease-in-out;
+	border-radius: 50%;
+}
+.check i:hover {
+	background: green;
+	transform: rotate(360deg);
+	color: white;
+}
+.pre-input {
+	color: white;
+	font-size: 15px;
+}
+input[type="text"] {
+	margin: 10px;
+	padding: 5px;
+	background: var(--blue-grey);
+	border: none;
+	border-bottom: 2px grey solid;
+	width: 200px;
+	font-size: 17.5px;
+	color: white;
+	transition: border-bottom-color 0.5s ease-in-out;
+}
+input[type="text"]:focus {
+	animation: color-change-border 7.5s ease-in-out infinite;
+}
+input[type="text"]:not(focus) {
+	animation: none;
+	color: white;
+}
+input[type="text"]:hover, input[type="text"]:focus {
+	border-bottom-color: white;
+}
+/* Button Style Overrides */
+
+.btn.tab {
+	width: 150px;
+	animation: color-change-text-border 7.5s ease-in-out infinite;
+}
+.btn.tab.selected {
+	color: green !important;
+	animation: none !important;
+	border-color: transparent;
+}
+.btn.tab.disabled {
+	animation: none;
+	color: var(--disabled-red);
+	border-color: transparent;
+}
+#first-name-error {
+	display: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--disabled-red);
+	color: white;
+	font-size: 17.5px;
+}
+
+/* Credits Window */
+
+#credits-window {
+	text-align: center;
+	width: 600px;
+	height: 600px;
+	border-radius: 10px;
+	position: fixed;
+	background: white;
+	top: calc(50vh - 300px);
+	left: calc(50vw - 300px);
+	z-index: 4;
+	display: none;
+}
+#semi-overlay {
+	display: none;
+}
+#credits-window * {
+	margin: 10px;
+}
+#credits-window h1 {
+	font-size: 25px;
+	color: var(--blue-grey);
+}
+.credits-tile span, .credits-tile span i {
+	font-size: 20px;
+}
+.credits-tile .c-name {
+	font-size: 25px;
+	position: absolute;
+	top: -10px;
+	margin: 0;
+	padding: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	left: -10px;
+	box-shadow: 2px 2px 10px var(--blue-grey);
+	background: white;
+	color: royalblue;
+	border-right: 2px var(--blue-grey) solid;
+	border-bottom: 2px var(--blue-grey) solid;
+	z-index: 3;
+}
+.credits-tile .c-source {
+	margin: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+	top: -10px;
+	left: -10px;
+	padding-top: 25px;
+	padding-left: 5px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.171);
+	color: var(--blue-grey);
+	text-shadow: 2px 2px white;
+}
+.credits-tile .c-source span {
+	font-size: 35px;
+	color: var(--blue-grey);
+	text-shadow: 2px 2px white;
+}
+.credits-tile .c-source span.reverse {
+	font-size: 35px;
+	color: white;
+	text-shadow: 2px 2px var(--blue-grey);
+}
+.credits-scroll {
+	overflow: auto;
+	height: 450px;
+}
+.credits-scroll::-webkit-scrollbar {
+	background: white;
+	width: 10px;
+}
+.credits-scroll::-webkit-scrollbar-thumb {
+	background: var(--blue-grey);
+	border-radius: 20px;
+}
+.btn.credits {
+	color: var(--blue-grey);
+	border-color: var(--blue-grey);
+	padding: 7.5px;
+	position: relative;
+	bottom: 6px;
+	font-size: 17.5px;
+	transition: background 0.75s ease-in-out, color 0.75s ease-in-out, box-shadow 0.75s ease-in-out;
+}
+.btn.credits:hover {
+	box-shadow: 0 0 10px var(--blue-grey);
+	background: var(--blue-grey);
+	color: white;
+}
+.credits-tile {
+	background-color: cornflowerblue;
+	height: 100px;
+	color: white;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+	border: 2px var(--blue-grey) solid;
+}
+.credits-tile * {
+	color: white;
+}
+#semi-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 3;
+	background: var(--blue-grey-translucent);
+}
+/* Animations */
+
+@keyframes repeat-first-name {
+	50% {
+		transform: scale(1.5);
+	}
+}
+@keyframes header-exit {
+	0% {
+		transform: none;
+	}
+	100% {
+		transform: translateX(-100vw);
+	}
+}
+/* Particles & Loader */
+
+#loader {
+	background: transparent;
+	width:50%;
+	height: 80vh;
+	margin-left: 25%;
+	position: fixed;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	color: black;
+}
+.cdplayer{
+	top: calc(50vh - 290px);
+	height: 600px;
+	width: 700px;
+	padding: 20px;
+	border: 5px var(--blue-grey) solid;
+	position: fixed;
+	overflow: hidden;
+	left: calc(50vw - 370px);
+	border-radius: 15px;
+	z-index: 10;
+	box-shadow: 2px 2px 50px rgb(0, 0, 0);
+	font-family: 'DSEG' !important;
+	background: white;
+  }
+  .cdplayer h2{
+	font-family: DSEG;
+	color:black;
+	overflow: hidden;
+	height: 35px;
+	font-size: 30px;
+	border-radius: 15px;
+	background-color: #B0A89E;
+	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+  }
+  .cdplayer h4{
+	text-transform: uppercase;
+	font-family: Squada One;
+	font-size: 130%;
+	color: black;
+  
+  }
+  .cdplayer i{
+	color:black;
+	margin: 1%;
+  }
+  .cdplayer img{
+	display: inline-block;
+	width: auto;
+	height: 50%;
+	margin: 75px;
+  }
+	.cdplayer .btn{
+		position: absolute;
+		border-radius: 0;
+		border: 2px var(--blue-grey) solid;
+		border-right: none;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+		color: var(--blue-grey);
+		right: -15px;
+		top: 95px;
+	}
+
+	.cdplayer .btn:hover{
+		color:white;
+		background: var(--blue-grey);
+	}

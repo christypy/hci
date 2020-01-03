@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100vh">
+
+<head>
+	<meta charset="utf-8">
+	<title>music game</title>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+	<meta http-equiv="Cache-Control" content="max-age=0">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="Description" content="">
+	<meta name="Keywords" content="">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+
+</head>
+
+<body>
+	<div class="game" id="game">
+		<audio id="d1" src="d1.mp3"></audio>
+		<audio id="d2" src="d2.mp3"></audio>
+		<audio id="d3" src="d3.mp3"></audio>
+		<audio id="d4" src="d4.mp3"></audio>
+		<img src="images/main.jpg" />
+		<!-- <div id="good" > <img src="images/good_工作區域 1.png"  class="logo" /> -->
+		<div><p class='logo1'>簡易版</p></div>
+		<div id="g" style="display:none"> <img src="images/good_工作區域 1.png" class='logo' /></div>
+		<div id="p" style="display:none"> <img src="images/PERFECT_工作區域 1.png" class='logo' /></div>
+
+		<div id="b" style="display:none"> <img src="images/bad_工作區域 1.png" class='logo' /></div>
+
+		<div id="m" style="display:none"> <img src="images/MISS.png" class='logo' /></div>
+
+		<div class="track track1"></div>
+		<div class="track track2"></div>
+		<div class="track track3"> </div>
+		<div class="track track4"></div>
+		<div class="collection-btn" id="target-btn" >
+			<div class="btn btn1 " id="1"></div>
+			<div class="btn btn2 " id="2"></div>
+			<div class="btn btn3 " id="3"></div>
+			<div class="btn btn4 " id="4"></div>
+		</div>
+		<div class="startGame"></div>
+		<div class="msg"></div>
+	</div>
+	<div class="mask"></div>
+
+	<script src="js/zepto.min.js"></script>
+	<script src="js/Rhythm.js"></script>
+	<script src="js/howler.min.js"></script>
+	<script>
+		$('#game').Rhythm({
+
+			musicUrl: './d12.mp3', //音樂
+			speed: 80, //落下速度
+			startT: 800, //出現時間
+			Countdown: 60 //遊戲時間
+		});
+	</script>
+</body>
+
+</html>

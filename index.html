@@ -1,50 +1,92 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100vh">
-	<head>
-		<meta charset="utf-8">
-		<title>music game</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
-		<meta http-equiv="Cache-Control" content="max-age=0">
-		<meta name="apple-touch-fullscreen" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="Description" content="">
-		<meta name="Keywords" content="">
-		<link rel="stylesheet" href="css/main.css">
-		
-	</head>
-<body >
-	<div class="game" id="game" >
-		<audio id="d1" src="d1.mp3" ></audio>  
-		<audio id="d2" src="d2.mp3" ></audio>  
-		<audio id="d3" src="d3.mp3" ></audio>  
-		<audio id="d4" src="d4.mp3" ></audio>  
-		<img src="images/main.jpg"  />
-		<!-- <img src="images/logo2.png"  class="logo" /> -->
-		<div class="track track1" ></div>			
-		<div class="track track2"></div>
-		<div class="track track3">	</div>
-		<div class="track track4"></div>
-		<div class="collection-btn" id="target-btn">
-			<div class="btn btn1 "></div>
-			<div class="btn btn2 "></div>
-			<div class="btn btn3 "></div>
-			<div class="btn btn4 "></div>
-		</div>
-		<div class="startGame"></div>
-		<div class="msg"></div>
-	</div>
-	<div class="mask"></div>
-	
-	<script src="js/zepto.min.js"></script>
-	<script src="js/Rhythm.js"></script>
-	<script src="js/howler.min.js"></script>
-	<script>
-		$('#game').Rhythm({
+<html lang="en">
 
-			musicUrl:'./d11.mp3', //音樂
-			speed :90, 	//落下速度
-			startT :1000, 	//出現時間
-			Countdown :60	//遊戲時間
-		});
-	</script>
-</body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>音樂節奏遊戲</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/splash-screen.css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+
+
+
+            $(document).keydown(function (event) {
+                switch (event.keyCode) {
+                    case 68:
+                        setTimeout(function () {
+                            $('#L1').css({
+                                "background": "white",
+                                "color": "var(--blue-grey)"
+                            });
+                        }, 200);
+
+
+                        $('#L1').get(0).click();
+                        // alert('按下了D');
+
+                        window.location.href = 'index1.html';
+                        return;
+                    case 70:
+                        setTimeout(function () {
+                            $('#L2').css({
+                                "background": "white",
+                                "color": "var(--blue-grey)"
+                            });
+                        }, 200);
+                        $('#L2').get(0).click();
+
+                        // console.log('按下了F');
+                        window.location.href = 'index2.html';
+
+                        return;
+                    case 74:
+                        setTimeout(function () {
+                            $('#L3').css({
+                                "background": "white",
+                                "color": "var(--blue-grey)"
+                            });
+                        }, 200);
+                        $('#L3').get(0).click();
+                        // console.log('按下了J');
+                        window.location.href = 'index3.html';
+
+                        return;
+                    case 75:
+                        setTimeout(function () {
+                            $('#L4').css({
+                                "background": "white",
+                                "color": "var(--blue-grey)"
+                            });
+                        }, 200);
+                        $('#L4').get(0).click();
+                        // console.log('按下了K');
+                        window.location.href = 'index4.html';
+
+                        return;
+                }
+
+            });
+
+        });
+    </script>
+</head>
+
+<body id="particles">
+    <header>
+        <span class="title">音樂節奏遊戲</span><br>
+        <button id="L1" class="tab btn">簡易(1)</button>
+        <button id="L2" class="tab btn">一般(2)</button>
+        <button id="L3" class="tab btn">困難(3)</button>
+        <button id="L4" class="tab btn">練習(4)</button>
+
+    </header>
+
+
+</body>
+
+
+</html>
